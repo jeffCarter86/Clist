@@ -1,0 +1,7 @@
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomList\bin\Debug\CustomList.exe.config
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomList\bin\Debug\CustomList.exe
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomList\bin\Debug\CustomList.pdb
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomList\obj\Debug\CustomList.csprojAssemblyReference.cache
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomList\obj\Debug\CustomList.csproj.CoreCompileInputs.cache
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomList\obj\Debug\CustomList.exe
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomList\obj\Debug\CustomList.pdb

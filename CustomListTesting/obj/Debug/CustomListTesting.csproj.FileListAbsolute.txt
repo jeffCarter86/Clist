@@ -1,0 +1,17 @@
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\CustomListTesting.dll
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\CustomListTesting.pdb
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\CustomList.exe
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\CustomList.pdb
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\CustomList.exe.config
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\obj\Debug\CustomListTesting.csprojAssemblyReference.cache
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\obj\Debug\CustomListTesting.csproj.CoreCompileInputs.cache
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\obj\Debug\CustomListTesting.csproj.CopyComplete
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\obj\Debug\CustomListTesting.dll
+C:\Users\jeff\Desktop\school\week4\projects\CustomList\CustomListTesting\obj\Debug\CustomListTesting.pdb
