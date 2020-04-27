@@ -12,23 +12,48 @@ namespace CustomList
 	{
 		//member variables
 		int count;
-		int capacity;
+		int arrayCapacity;
+
 		private T[] arrayOfData;
+
+		public T this[int index]
+		{
+			get { return arrayOfData[index]; }
+			set { arrayOfData[index] = value; }
+		}
+		public int Length { get { return count; } }
 
 		public int Count { get { return count; } }
 
-		public int Capacity { get; set; }
+		public int Capacity
+		{
+			get
+			{
+				return arrayCapacity;
+			}
+			set
+			{
+				if (count <= arrayCapacity)
+				{
+					arrayCapacity = 4;
+				}
+
+			}
+		}
 
 		//ctor
 		public CustomList()
 		{
+			arrayCapacity = 4;
+			arrayOfData = new T[arrayCapacity];
 
 		}
 
 		//member methods
 		public void Add(T item)
 		{
-
+			arrayOfData[count] = item;
+			count++;
 		}
 
 		public int DefaultIfEmpty()

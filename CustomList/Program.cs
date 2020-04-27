@@ -10,10 +10,9 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
-            List<int> aList = new List<int>() { 1, 2, 3, 4 };
-
-            int[] array = new int[10];
-            array.DefaultIfEmpty();
+            CustomList<int> testList = new CustomList<int>();
+            testList.Add(5);
+            testList.Add(7);
         }
     }
 }

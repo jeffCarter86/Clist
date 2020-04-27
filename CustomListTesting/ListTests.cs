@@ -23,29 +23,13 @@ namespace CustomListTesting
             Assert.AreEqual(expectedCapacity, actualCapacity);
         }
 
-		[TestMethod]
-		//Tests to make sure that the returned default value of the array is of the correct data type
-		public void Create_ArrayOfInts_ReturnValueTypeDefaultValue()
-        {
-            //arrange
-            CustomList<int> aCustomList = new CustomList<int>();
-
-            int expectedDefaultValue = 0;
-
-            //act
-            //deal with this error
-            int actualDefaultValue = aCustomList.DefaultIfEmpty();
-
-            //assert
-            Assert.AreEqual(expectedDefaultValue, actualDefaultValue);
-        }
-
 
 		[TestMethod]
 		//Tests to make sure that the list is increasing the count as new elements get added to the list
 		public void Add_OneValue_IncrementCountOfList()
         {
             //arrange
+
             CustomList<int> aCustomList = new CustomList<int>();
             int expected = 1;
 
@@ -65,10 +49,10 @@ namespace CustomListTesting
 			int expected = 10;
 
 			//act
-			aCustomList.AddValueToArray(expected);
+			aCustomList.Add(expected);
 
 			//assert
-			Assert.AreEqual(expected, aCustomList);
+			Assert.AreEqual(expected, aCustomList[0]);
 		}
 
 		[TestMethod]
@@ -82,13 +66,54 @@ namespace CustomListTesting
 			int secondElement = 15;
 
 			//act
-			aCustomList.AddValueToArray(firstElement);
-			aCustomList.AddValueToArray(secondElement);
+			aCustomList.Add(firstElement);
+			aCustomList.Add(secondElement);
 
 			//Assert
-			Assert.AreEqual(expected, aCustomList);
+			Assert.AreEqual(expected, aCustomList[1]);
 		}
 
+		//Tests to make sure that the index of the element in index position two is correct when multiple elements are added to the list
+		[TestMethod]
+		public void Add_ThreeValues_CheckCapacityIsFour()
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 4;
+			int elementOne = 10;
+			int elementTwo = 15;
+			int elementThree = 20;
+
+			//act
+			aCustomList.Add(elementOne);
+			aCustomList.Add(elementTwo);
+			aCustomList.Add(elementThree);
+
+			//Assert
+			Assert.AreEqual(expected, aCustomList.Capacity);
+		}
+		[TestMethod]
+		public void Add_SixValues_CheckCapacityIsEight()
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 8;
+			int elementOne = 1;
+			int elementTwo = 2;
+			int elementThree = 3;
+			int elementFour = 4;
+			int elementFive = 5;
+			int elementSix = 6;
+			//act
+			aCustomList.Add(elementOne);
+			aCustomList.Add(elementTwo);
+			aCustomList.Add(elementThree);
+			aCustomList.Add(elementFour);
+			aCustomList.Add(elementFive);
+			aCustomList.Add(elementSix);
+			//Assert
+			Assert.AreEqual(expected, aCustomList.Capacity);
+		}
 
 		[TestMethod]
 		public void add_CheckIfExceedingCapacity_CreateNewArray()
@@ -116,7 +141,7 @@ namespace CustomListTesting
 			aCustomList.Add(elementFive);
 
 			//assert
-			Assert.AreEqual(expected, aCustomList);
+			Assert.AreEqual(expected, aCustomList[4]);
 
 		}
 
