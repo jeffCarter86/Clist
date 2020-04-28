@@ -10,10 +10,22 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
-            CustomList<int> testList = new CustomList<int>();
-            
-            testList.Subtract(2);
-        
+            ListB<int> newlist = new ListB<int>();
+            newlist.Add(24);
+            newlist.Add(12);
+            newlist.Add(56);
+            newlist.Remove(99);
+
+
+
+
+
+
+
+
+            Console.WriteLine(newlist.Count);
+            Console.ReadLine();
+
         }
     }
 }

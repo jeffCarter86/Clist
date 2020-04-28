@@ -7,195 +7,285 @@ namespace CustomListTesting
 	[TestClass]
 	public class ListTests
 	{
-		[TestMethod]
-		public void Create_ArrayOfValues_ReturnCapacity()
+        [TestClass]
+        public class CustomListClassTests
+        {
+            [TestMethod]
+            public void Add_CheckCount_AddNegativeNumber()
+            {
+                // arrange
 
-		//Test for the creation of the array, checks to see if capacity is correct for created array
+                ListB<int> listB = new ListB<int>();
+                int value = -3;
+                int expected = 1;
+                int actual;
 
-		{
-			//arrange
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expectedCapacity = 4;
-
-			//act
-			int actualCapacity = aCustomList.Capacity;
-			//assert
-			Assert.AreEqual(expectedCapacity, actualCapacity);
-		}
-
-
-		[TestMethod]
-		//Tests to make sure that the list is increasing the count as new elements get added to the list
-		public void Add_OneValue_IncrementCountOfList()
-		{
-			//arrange
-
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expected = 1;
-
-			//act
-			aCustomList.Add(expected);
-			//assert
-			Assert.AreEqual(expected, aCustomList.Count);
-		}
+                //act
+                listB.Add(value);
+                actual = listB.Count;
 
 
-		[TestMethod]
-		//Tests to make sure that the index of the element added is correct when one value is added to the list
-		public void Add_OneValue_ReturnValueAtIndex()
-		{
-			//arrange
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expected = 10;
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+            [TestMethod]
+            public void Add_CheckCount_AddPositiveNumber()
+            {
+                // arrange
 
-			//act
-			aCustomList.Add(expected);
+                ListB<int> listB = new ListB<int>();
+                int value = 23;
+                int expected = 1;
+                int actual;
 
-			//assert
-			Assert.AreEqual(expected, aCustomList[0]);
-		}
-
-		[TestMethod]
-		//Tests to make sure that the index of the element in index position two is correct when multiple elements are added to the list
-		public void Add_TwoValues_ReturnElementAtIndex()
-		{
-			//arrange
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expected = 15;
-			int firstElement = 10;
-			int secondElement = 15;
-
-			//act
-			aCustomList.Add(firstElement);
-			aCustomList.Add(secondElement);
-
-			//Assert
-			Assert.AreEqual(expected, aCustomList[1]);
-		}
-
-		//Tests to make sure that the index of the element in index position two is correct when multiple elements are added to the list
-		[TestMethod]
-		public void Add_ThreeValues_CheckCapacityIsFour()
-		{
-			//arrange
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expected = 4;
-			int elementOne = 10;
-			int elementTwo = 15;
-			int elementThree = 20;
-
-			//act
-			aCustomList.Add(elementOne);
-			aCustomList.Add(elementTwo);
-			aCustomList.Add(elementThree);
-
-			//Assert
-			Assert.AreEqual(expected, aCustomList.Capacity);
-		}
-		[TestMethod]
-		public void Add_SixValues_CheckCapacityIsEight()
-		{
-			//arrange
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expected = 8;
-			int elementOne = 1;
-			int elementTwo = 2;
-			int elementThree = 3;
-			int elementFour = 4;
-			int elementFive = 5;
-			int elementSix = 6;
-			//act
-			aCustomList.Add(elementOne);
-			aCustomList.Add(elementTwo);
-			aCustomList.Add(elementThree);
-			aCustomList.Add(elementFour);
-			aCustomList.Add(elementFive);
-			aCustomList.Add(elementSix);
-			//Assert
-			Assert.AreEqual(expected, aCustomList.Capacity);
-		}
-
-		[TestMethod]
-		public void add_CheckIfExceedingCapacity_CreateNewArray()
-		{
-
-		}
-
-		[TestMethod]
-		//tests to make sure that the array and its elements at each index are properly copied to a new, larger array
-		public void Add_ElementsOverDefaultArraySize_CopyArrayToNewArray()
-		{
-			//arrange
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expected = 5;
-			int elementOne = 1;
-			int elementTwo = 2;
-			int elementThree = 3;
-			int elementFour = 4;
-			int elementFive = 5;
-			//act
-			aCustomList.Add(elementOne);
-			aCustomList.Add(elementTwo);
-			aCustomList.Add(elementThree);
-			aCustomList.Add(elementFour);
-			aCustomList.Add(elementFive);
-
-			//assert
-			Assert.AreEqual(expected, aCustomList[4]);
-
-		}
-
-		[TestMethod]
-		public void SubtractB_ThreeValues_CheckCapacityIsFour()
-		{
-			//arrange
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expected = 4;
-			int elementOne = 0;
-			int elementTwo = 2;
-			int elementThree = 1;
-
-			//act
-			aCustomList.Subtract(elementOne);
-			aCustomList.Subtract(elementTwo);
-			aCustomList.Subtract(elementThree);
-
-			//Assert
-			Assert.AreEqual(expected, aCustomList.Capacity);
+                //act
+                listB.Add(value);
+                actual = listB.Count;
 
 
-		}
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+            [TestMethod]
+            public void Add_CheckIfNewArrayIsMade_Add5thElement()
+            {
+                // arrange
 
-		[TestMethod]
-		//Tests to make sure that the list is decreasing the count if removed from listt
-		public void Subtract_OneValue_DecreaseOfList()
-		{
-			//arrange
+                ListB<int> listB = new ListB<int>();
+                int value = 23;
+                int expected = 8;
+                int actual;
 
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expected = -1;
+                //act
+                listB.Add(value);
+                listB.Add(value + 10);
+                listB.Add(value + 20);
+                listB.Add(value + 15);
+                listB.Add(value + 32);
+                actual = listB.Capacity;
 
-			//act
-			aCustomList.Subtract(expected);
-			//assert
-			Assert.AreEqual(expected, aCustomList.Count);
-		}
-	
-		[TestMethod]
-		//Tests to make sure that the index of the element Subtracted is correct when one value is Subtracted to the list
-		public void Subtract_OneValue_ReturnValueAtIndex()
-		{
-			//arrange
-			CustomList<int> aCustomList = new CustomList<int>();
-			int expected = 0;
 
-			//act
-			aCustomList.Subtract(expected);
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
 
-			//assert
-			Assert.AreEqual(expected, aCustomList[0]);
-		}
-	}
+            [TestMethod]
+            public void Add_CheckListCount_Add5thElement()
+            {
+                // arrange
+
+                ListB<int> listB = new ListB<int>();
+                int value = 23;
+                int expected = 5;
+                int actual;
+
+                //act
+                listB.Add(value);
+                listB.Add(value + 10);
+                listB.Add(value + 20);
+                listB.Add(value + 15);
+                listB.Add(value + 32);
+                actual = listB.Count;
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestMethod]
+            public void Add_CheckArrayOrderStayedSame_Add5thElement()
+            {
+                // arrange
+
+                ListB<int> listB = new ListB<int>();
+
+                int expected = 43;
+                int actual = 0;
+
+                //act
+                listB.Add(23);
+                listB.Add(33);
+                listB.Add(43);
+                listB.Add(38);
+                listB.Add(55);
+
+
+                actual = listB[2];
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestMethod]
+            public void Remove_CheckCount_RemoveOneValue()
+            {
+                // arrange
+
+                ListB<int> listB = new ListB<int>();
+                int expected = 2;
+                int actual;
+
+                //act
+                listB.Add(24);
+                listB.Add(12);
+                listB.Add(56);
+                listB.Remove(12);
+                actual = listB.Count;
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestMethod]
+            public void Remove_CheckCount_RemoveMultipleValues()
+            {
+                // arrange
+
+                ListB<int> listB = new ListB<int>();
+                int expected = 2;
+                int actual;
+
+                //act
+                listB.Add(24);
+                listB.Add(12);
+                listB.Add(56);
+                listB.Add(2);
+                listB.Add(3);
+                listB.Add(53);
+                listB.Remove(24);
+                listB.Remove(3);
+                listB.Remove(56);
+                listB.Remove(53);
+                actual = listB.Count;
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestMethod]
+            public void Remove_CheckIndexOrder_RemoveMiddleValue()
+            {
+                // arrange
+
+                ListB<int> listB = new ListB<int>();
+                int expected = 3;
+                int actual;
+
+                //act
+                listB.Add(24);
+                listB.Add(12);
+                listB.Add(56);
+                listB.Add(2);
+                listB.Add(3);
+                listB.Add(53);
+                listB.Remove(2);
+                actual = listB[3];
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestMethod]
+            public void Remove_CheckCount_RemoveAllValues()
+            {
+                // arrange
+
+                ListB<int> listB = new ListB<int>();
+                int expected = 0;
+                int actual;
+
+                //act
+                listB.Add(24);
+                listB.Add(12);
+                listB.Add(56);
+
+                listB.Remove(24);
+                listB.Remove(12);
+                listB.Remove(56);
+                actual = listB.Count;
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+
+
+
+            [TestMethod]
+            public void Remove_CheckCount_RemoveAValueThatHasADuplicateValue()
+            {
+                // arrange
+
+                ListB<int> listB = new ListB<int>();
+                int expected = 3;
+                int actual;
+
+                //act
+                listB.Add(24);
+                listB.Add(12);
+                listB.Add(24);
+                listB.Add(33);
+                listB.Remove(24);
+
+                actual = listB.Count;
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestMethod]
+            public void Remove_CheckArrayOrder_RemoveAValueThatHasADuplicateValue()
+            {
+                // arrange
+
+                ListB<int> listB = new ListB<int>();
+                int expected = 24;
+                int actual;
+
+                //act
+                listB.Add(24);
+                listB.Add(12);
+                listB.Add(24);
+                listB.Add(33);
+
+                listB.Remove(24);
+
+                actual = listB[1];
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestMethod]
+            public void ToString_CheckCoversion_ListOfIntegers()
+            {
+                // arrange
+
+                ListB<int> listB = new ListB<int>();
+                string expected = "3456";
+                string actual;
+
+                //act
+                listB.Add(3);
+                listB.Add(4);
+                listB.Add(5);
+                listB.Add(6);
+
+
+
+                actual = listB.ToString();
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+           
+            }
+        }
 
 
 }
