@@ -4,40 +4,40 @@ using CustomList;
 
 namespace CustomListTesting
 {
-    [TestClass]
-    public class ListTests
-    {
-        [TestMethod]
-        public void Create_ArrayOfValues_ReturnCapacity()
+	[TestClass]
+	public class ListTests
+	{
+		[TestMethod]
+		public void Create_ArrayOfValues_ReturnCapacity()
 
-        //Test for the creation of the array, checks to see if capacity is correct for created array
+		//Test for the creation of the array, checks to see if capacity is correct for created array
 
-        {
-            //arrange
-            CustomList<int> aCustomList = new CustomList<int>();
-            int expectedCapacity = 4;
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expectedCapacity = 4;
 
-            //act
-            int actualCapacity = aCustomList.Capacity;
-            //assert
-            Assert.AreEqual(expectedCapacity, actualCapacity);
-        }
+			//act
+			int actualCapacity = aCustomList.Capacity;
+			//assert
+			Assert.AreEqual(expectedCapacity, actualCapacity);
+		}
 
 
 		[TestMethod]
 		//Tests to make sure that the list is increasing the count as new elements get added to the list
 		public void Add_OneValue_IncrementCountOfList()
-        {
-            //arrange
+		{
+			//arrange
 
-            CustomList<int> aCustomList = new CustomList<int>();
-            int expected = 1;
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 1;
 
-            //act
-            aCustomList.Add(expected);
-            //assert
-            Assert.AreEqual(expected, aCustomList.Count);
-        }
+			//act
+			aCustomList.Add(expected);
+			//assert
+			Assert.AreEqual(expected, aCustomList.Count);
+		}
 
 
 		[TestMethod]
@@ -145,6 +145,57 @@ namespace CustomListTesting
 
 		}
 
+		[TestMethod]
+		public void SubtractB_ThreeValues_CheckCapacityIsFour()
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 4;
+			int elementOne = 0;
+			int elementTwo = 2;
+			int elementThree = 1;
 
+			//act
+			aCustomList.Subtract(elementOne);
+			aCustomList.Subtract(elementTwo);
+			aCustomList.Subtract(elementThree);
+
+			//Assert
+			Assert.AreEqual(expected, aCustomList.Capacity);
+
+
+		}
+
+		[TestMethod]
+		//Tests to make sure that the list is decreasing the count if removed from listt
+		public void Subtract_OneValue_DecreaseOfList()
+		{
+			//arrange
+
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = -1;
+
+			//act
+			aCustomList.Subtract(expected);
+			//assert
+			Assert.AreEqual(expected, aCustomList.Count);
+		}
+	
+		[TestMethod]
+		//Tests to make sure that the index of the element Subtracted is correct when one value is Subtracted to the list
+		public void Subtract_OneValue_ReturnValueAtIndex()
+		{
+			//arrange
+			CustomList<int> aCustomList = new CustomList<int>();
+			int expected = 0;
+
+			//act
+			aCustomList.Subtract(expected);
+
+			//assert
+			Assert.AreEqual(expected, aCustomList[0]);
+		}
 	}
+
+
 }

@@ -14,7 +14,7 @@ namespace CustomList
 		int count;
 		int arrayCapacity;
 
-		private T[] arrayOfData;
+		public T[] arrayOfData;
 
 		public T this[int index]
 		{
@@ -65,5 +65,16 @@ namespace CustomList
 		{
 			throw new NotImplementedException();
 		}
+
+		public void Subtract(T item)
+		{
+			arrayCapacity = 4;
+			count--;
+
+			arrayCapacity = 4;
+			arrayOfData = new T[arrayCapacity];
+		}
+
+		
 	}
 }

@@ -11,8 +11,9 @@ namespace CustomList
         static void Main(string[] args)
         {
             CustomList<int> testList = new CustomList<int>();
-            testList.Add(5);
-            testList.Add(7);
+            
+            testList.Subtract(2);
+        
         }
     }
 }
