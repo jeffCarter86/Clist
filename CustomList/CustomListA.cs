@@ -9,7 +9,7 @@ namespace CustomList
 {
 
 
-    public class ListB<T>
+    public class ListB<T> : IEnumerable , IComparer<int>, IComparer<string>
     {
         //member variables
 
@@ -82,7 +82,6 @@ namespace CustomList
 
         //member methods
 
-      
         public void Add(T value)
         {
             if (count < capacity)
@@ -176,9 +175,13 @@ namespace CustomList
 
                 }
             }
+
+
+
+
         }
 
-              public override string ToString()
+        public override string ToString()
         {
 
             for (int i = 0; i < count; i++)
@@ -188,7 +191,6 @@ namespace CustomList
             }
             return stringOfList;
         }
-
         public static ListB<T> operator +(ListB<T> l1, ListB<T> l2)
         {
 
@@ -209,12 +211,66 @@ namespace CustomList
 
             return combinedList;
         }
+        public static ListB<T> operator -(ListB<T> l1, ListB<T> l2)
+        {
+
+            ListB<T> newList = new ListB<T>();
+            for (int i = 0; i < l1.Count; i++)
+            {
+                newList.Add(l1[i]);
+            }
 
 
+            for (int i = 0; i < newList.Count; i++)
+            {
+                for (int j = 0; j < l2.Count; j++)
+                {
+                    if (newList[i].Equals(l2[j]))
+                    {
+                        newList.Remove(l2[j]);
+
+                    }
+                }
+            }
+
+            return newList;
+        }
+
+        
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return listArray[i];
+            }
+        }
 
 
+       
 
+        public int Compare(int x, int y)
+        {
+            if (x == 0 || y == 0)
+            {
+                return 0;
+            }
 
+            // CompareTo() method 
+            return x.CompareTo(y);
+        }
+
+        public int Compare(string x, string y)
+        {
+
+            if (x == null || y == null)
+            {
+                return 0;
+            }
+
+            // "CompareTo()" method 
+            return x.CompareTo(y);
+
+        }
     }
 }
     

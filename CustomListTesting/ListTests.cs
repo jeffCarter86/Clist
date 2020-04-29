@@ -434,6 +434,102 @@ namespace CustomListTesting
             Assert.AreEqual(expected, actual);
         }
 
+
+        [TestMethod]
+        public void OverloadSubtractionOfLists_CheckCount_TwoListsOfStrings()
+        {
+            // arrange
+
+            ListB<string> listB = new ListB<string>();
+            ListB<string> listA = new ListB<string>();
+            ListB<string> combinedList = new ListB<string>();
+            int expected = 1;
+            int actual;
+
+            //act
+            listB.Add("J");
+            listB.Add("e");
+            listB.Add("f");
+            listA.Add("J");
+            listA.Add("a");
+            listA.Add("r");
+            listA.Add("t");
+            listA.Add("e");
+
+            combinedList = listB - listA;
+
+
+
+            actual = combinedList.Count;
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void OverloadSubtractionOfLists_CheckCount_TwoListsOfInts()
+        {
+            // arrange
+
+            ListB<int> listB = new ListB<int>();
+            ListB<int> listA = new ListB<int>();
+            ListB<int> combinedList = new ListB<int>();
+            int expected = 2;
+            int actual;
+
+            //act
+            listB.Add(1);
+            listB.Add(2);
+            listB.Add(3);
+            listA.Add(1);
+            listA.Add(4);
+            listA.Add(5);
+            listA.Add(6);
+            listA.Add(7);
+
+            combinedList = listB - listA;
+
+
+
+            actual = combinedList.Count;
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void OverloadSubtractionOfLists_CheckCountOfOriginalList_TwoListsOfInts()
+        {
+            // arrange
+
+            ListB<int> listB = new ListB<int>();
+            ListB<int> listA = new ListB<int>();
+            ListB<int> combinedList = new ListB<int>();
+            int expected = 3;
+            int actual;
+
+            //act
+            listB.Add(1);
+            listB.Add(2);
+            listB.Add(3);
+            listA.Add(1);
+            listA.Add(4);
+            listA.Add(5);
+            listA.Add(6);
+            listA.Add(7);
+
+            combinedList = listB - listA;
+
+
+
+            actual = listB.Count;
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
     }
 

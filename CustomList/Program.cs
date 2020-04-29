@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,37 +9,97 @@ namespace CustomList
 {
     class Program
     {
-        static void Main(string[] args)
+        // Main Method 
+        public static void Main()
         {
-            ListB<int> newlist = new ListB<int>();
-            newlist.Add(24);
-            newlist.Add(12);
-            newlist.Add(56);
-            newlist.Add(18);
-            newlist.Add(6);
-            newlist.Add(32);
-            newlist.Add(1);
+
+            List<int> list1 = new List<int>
+            { 
+  
+            // list elements 
+            1, 5, 6, 2, 4, 3
+
+             };
+
+            Console.WriteLine("Original List");
+
+            foreach (int g in list1)
+            {
+
+                // Display Original List 
+                Console.WriteLine(g);
+            }
+
+          
+
+            foreach (int g in list1)
+            {
+
+                // Display sorted list 
+                Console.WriteLine(g);
+            }
+
+            ListB<IComparer> gg = new ListB<IComparer>();
 
 
+            Console.WriteLine("\nSort with a comparer:");
 
+            // use of List<T>.Sort(IComparer<T>)  
+            // method. The comparer is "gg" 
+            list1.Sort(gg);
 
+            foreach (int g in list1)
+            {
 
+                // Display sorted list 
+                Console.WriteLine(g);
 
+            }
 
-            ListB<int> newlist2 = new ListB<int>();
-            newlist.Add(4);
-            newlist.Add(8);
-            newlist.Add(16);
-            newlist.Add(32);
-            newlist.Add(64);
-            newlist.Add(128);
-            
+            List<string> list2 = new List<string>();
 
-            ListB<int> combinedList = new ListB<int>();
-            combinedList = newlist + newlist2;
-            Console.WriteLine(combinedList.ToString());
-            Console.ReadLine();
+            // list elements 
+            list2.Add("A");
+            list2.Add("I");
+            list2.Add("G");
+            list2.Add("B");
+            list2.Add("E");
+            list2.Add("H");
+            list2.Add("F");
+            list2.Add("C");
+            list2.Add("J");
+            list2.Add("D");
+
+            Console.WriteLine("Original List");
+
+            // Display Original List 
+            foreach (string h in list2)
+            {
+
+                // Display Original List 
+                Console.WriteLine(h);
+            }
+
+            // "ggg" is the object 
+            ListB<IComparer> ggg = new ListB<IComparer>();
+
+            Console.WriteLine("\nSort with a comparer:");
+
+            // sort the list with a  
+            // specified comparer "ggg" 
+            list2.Sort(ggg);
+
+            // Display sorted List 
+            foreach (string h in list2)
+            {
+
+                // Display sorted list 
+                Console.WriteLine(h);
+
+            }
 
         }
     }
 }
+
+
