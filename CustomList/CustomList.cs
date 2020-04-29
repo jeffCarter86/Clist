@@ -189,6 +189,26 @@ namespace CustomList
             return stringOfList;
         }
 
+        public static ListB<T> operator +(ListB<T> l1, ListB<T> l2)
+        {
+
+
+            ListB<T> combinedList = new ListB<T>();
+
+            for (int i = 0; i < l1.Count; i++)
+            {
+
+                combinedList.Add(l1[i]);
+
+            }
+
+            for (int i = 0; i < l2.Count; i++)
+            {
+                combinedList.Add(l2[i]);
+            }
+
+            return combinedList;
+        }
 
 
 
@@ -196,5 +216,5 @@ namespace CustomList
 
 
     }
-        }
+}
     

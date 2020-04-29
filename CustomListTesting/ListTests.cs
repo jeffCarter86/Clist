@@ -7,6 +7,8 @@ namespace CustomListTesting
 	[TestClass]
 	public class ListTests
 	{
+        private string actual;
+
         [TestClass]
         public class CustomListClassTests
         {
@@ -310,14 +312,6 @@ namespace CustomListTesting
                 listB.Add("k");
 
 
-
-
-
-
-
-
-
-
             actual = listB.ToString();
 
 
@@ -334,7 +328,7 @@ namespace CustomListTesting
                 string actual;
 
             //act
-            listB.Add(56.32);
+                listB.Add(56.32);
                 listB.Add(3.21);
 
 
@@ -347,8 +341,101 @@ namespace CustomListTesting
                 Assert.AreEqual(expected, actual);
             }
 
+        [TestMethod]
+        public void OverloadAdditionOfLists_CheckCount_TwoListsOfIntegers()
+        {
+            // arrange
+
+            ListB<int> listB = new ListB<int>();
+            ListB<int> listA = new ListB<int>();
+            ListB<int> combinedList = new ListB<int>();
+            int expected = 8;
+            int actual;
+
+            //act
+            listB.Add(3);
+            listB.Add(9);
+            listB.Add(27);
+            listA.Add(71);
+            listA.Add(213);
+            listA.Add(639);
+            listA.Add(18);
+            listA.Add(25);
+
+            combinedList = listB + listA;
+
+
+
+            actual = combinedList.Count;
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void OverloadAdditionOfLists_CheckCount_TwoListsOfStrings()
+        {
+            // arrange
+
+            ListB<string> listB = new ListB<string>();
+            ListB<string> listA = new ListB<string>();
+            ListB<string> combinedList = new ListB<string>();
+            int expected = 8;
+            int actual;
+
+            //act
+            listB.Add("J");
+            listB.Add("e");
+            listB.Add("f");
+            listA.Add("f");
+            listA.Add("r");
+            listA.Add("e");
+            listA.Add("y");
+            listA.Add("C");
+
+            combinedList = listB + listA;
+
+
+
+            actual = combinedList.Count;
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void OverloadAdditionOfLists_CheckArrayOrderAfterCombining_TwoListsOfStrings()
+
+        { 
+            // arrange
+
+        ListB<string> listB = new ListB<string>();
+        ListB<string> listA = new ListB<string>();
+        ListB<string> combinedList = new ListB<string>();
+        string expected = "e";
+
+            //act
+
+            listB.Add("J");
+            listB.Add("e");
+            listB.Add("f");
+            listA.Add("f");
+            listA.Add("r");
+            listA.Add("e");
+            listA.Add("y");
+            listA.Add("C");
+
+            combinedList = listB + listA;
+
+            actual = combinedList[5];
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+    }
+    }
 
 
 

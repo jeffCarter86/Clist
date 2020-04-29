@@ -14,7 +14,10 @@ namespace CustomList
             newlist.Add(24);
             newlist.Add(12);
             newlist.Add(56);
-            newlist.Remove(99);
+            newlist.Add(18);
+            newlist.Add(6);
+            newlist.Add(32);
+            newlist.Add(1);
 
 
 
@@ -22,8 +25,18 @@ namespace CustomList
 
 
 
+            ListB<int> newlist2 = new ListB<int>();
+            newlist.Add(4);
+            newlist.Add(8);
+            newlist.Add(16);
+            newlist.Add(32);
+            newlist.Add(64);
+            newlist.Add(128);
+            
 
-            Console.WriteLine(newlist.Count);
+            ListB<int> combinedList = new ListB<int>();
+            combinedList = newlist + newlist2;
+            Console.WriteLine(combinedList.ToString());
             Console.ReadLine();
 
         }
