@@ -266,13 +266,13 @@ namespace CustomListTesting
                 // arrange
 
                 ListB<int> listB = new ListB<int>();
-                string expected = "3456";
+                string expected = "1986";
                 string actual;
 
                 //act
-                listB.Add(3);
-                listB.Add(4);
-                listB.Add(5);
+                listB.Add(1);
+                listB.Add(9);
+                listB.Add(8);
                 listB.Add(6);
 
 
@@ -283,9 +283,72 @@ namespace CustomListTesting
                 //assert
                 Assert.AreEqual(expected, actual);
             }
-           
+
+            
             }
+            [TestMethod]
+            public void ToString_CheckCoversion_ListOfStrings()
+            {
+                // arrange
+
+                ListB<string> listB = new ListB<string>();
+            string expected = "Packers Suck";
+                string actual;
+
+                //act
+                listB.Add("P");
+                listB.Add("a");
+                listB.Add("c");
+                listB.Add("k");       
+                listB.Add("e");
+                listB.Add("r");
+                listB.Add("s");
+                listB.Add(" ");
+                listB.Add("S");
+                listB.Add("u");
+                listB.Add("c");
+                listB.Add("k");
+
+
+
+
+
+
+
+
+
+
+            actual = listB.ToString();
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+            [TestMethod]
+            public void ToString_CheckCoversion_ListOfDoubles()
+            {
+                // arrange
+
+                ListB<double> listB = new ListB<double>();
+            string expected = "56.323.21";
+                string actual;
+
+            //act
+            listB.Add(56.32);
+                listB.Add(3.21);
+
+
+
+
+                actual = listB.ToString();
+
+
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
+
+        }
         }
 
 
-}
+

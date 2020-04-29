@@ -9,7 +9,7 @@ namespace CustomList
 {
 
 
-    public class ListB<T> : IEnumerable
+    public class ListB<T>
     {
         //member variables
 
@@ -176,19 +176,25 @@ namespace CustomList
 
                 }
             }
+        }
 
+              public override string ToString()
+        {
 
-
-            public IEnumerator GetEnumerator()
+            for (int i = 0; i < count; i++)
             {
-                for (int i = 0; i < count; i++)
-                {
-                    yield return listArray[i];
-                }
+                string stringValue = Convert.ToString(listArray[i]);
+                stringOfList += stringValue;
             }
-
-
-
+            return stringOfList;
         }
-        }
+
+
+
+
+
+
+
     }
+        }
+    
