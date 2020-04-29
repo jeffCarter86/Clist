@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomList;
+using System.Collections;
 
 namespace CustomListTesting
 {
-	[TestClass]
-	public class ListTests
-	{
+    [TestClass]
+    public class ListTests
+    {
         private string actual;
 
         [TestClass]
@@ -286,60 +287,60 @@ namespace CustomListTesting
                 Assert.AreEqual(expected, actual);
             }
 
-            
-            }
-            [TestMethod]
-            public void ToString_CheckCoversion_ListOfStrings()
-            {
-                // arrange
 
-                ListB<string> listB = new ListB<string>();
+        }
+        [TestMethod]
+        public void ToString_CheckCoversion_ListOfStrings()
+        {
+            // arrange
+
+            ListB<string> listB = new ListB<string>();
             string expected = "Packers Suck";
-                string actual;
+            string actual;
 
-                //act
-                listB.Add("P");
-                listB.Add("a");
-                listB.Add("c");
-                listB.Add("k");       
-                listB.Add("e");
-                listB.Add("r");
-                listB.Add("s");
-                listB.Add(" ");
-                listB.Add("S");
-                listB.Add("u");
-                listB.Add("c");
-                listB.Add("k");
+            //act
+            listB.Add("P");
+            listB.Add("a");
+            listB.Add("c");
+            listB.Add("k");
+            listB.Add("e");
+            listB.Add("r");
+            listB.Add("s");
+            listB.Add(" ");
+            listB.Add("S");
+            listB.Add("u");
+            listB.Add("c");
+            listB.Add("k");
 
 
             actual = listB.ToString();
 
 
-                //assert
-                Assert.AreEqual(expected, actual);
-            }
-            [TestMethod]
-            public void ToString_CheckCoversion_ListOfDoubles()
-            {
-                // arrange
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ToString_CheckCoversion_ListOfDoubles()
+        {
+            // arrange
 
-                ListB<double> listB = new ListB<double>();
+            ListB<double> listB = new ListB<double>();
             string expected = "56.323.21";
-                string actual;
+            string actual;
 
             //act
-                listB.Add(56.32);
-                listB.Add(3.21);
+            listB.Add(56.32);
+            listB.Add(3.21);
 
 
 
 
-                actual = listB.ToString();
+            actual = listB.ToString();
 
 
-                //assert
-                Assert.AreEqual(expected, actual);
-            }
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
         public void OverloadAdditionOfLists_CheckCount_TwoListsOfIntegers()
@@ -408,13 +409,13 @@ namespace CustomListTesting
         [TestMethod]
         public void OverloadAdditionOfLists_CheckArrayOrderAfterCombining_TwoListsOfStrings()
 
-        { 
+        {
             // arrange
 
-        ListB<string> listB = new ListB<string>();
-        ListB<string> listA = new ListB<string>();
-        ListB<string> combinedList = new ListB<string>();
-        string expected = "e";
+            ListB<string> listB = new ListB<string>();
+            ListB<string> listA = new ListB<string>();
+            ListB<string> combinedList = new ListB<string>();
+            string expected = "e";
 
             //act
 
@@ -530,8 +531,11 @@ namespace CustomListTesting
             Assert.AreEqual(expected, actual);
         }
 
+
+
+
     }
-    }
+}
 
 
 

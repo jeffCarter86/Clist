@@ -30,8 +30,6 @@ namespace CustomList
                 Console.WriteLine(g);
             }
 
-          
-
             foreach (int g in list1)
             {
 
