@@ -237,7 +237,46 @@ namespace CustomList
         }
 
 
-        public IEnumerator GetEnumerator()
+
+        public ListB<T> Zip(ListB<T> list)
+        {
+
+            ListB<T> temp1 = new ListB<T>();
+            ListB<T> temp2 = new ListB<T>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                temp1.Add(list[i]);
+            }
+            for (int i = 0; i < listArray.Length; i++)
+            {
+                temp2.Add(listArray[i]);
+            }
+            ListB<T> zippedList = new ListB<T>();
+            int maxCount;
+            if (temp1.Count > temp2.Count)
+            {
+                maxCount = temp1.Count;
+            }
+            else
+            {
+                maxCount = temp2.Count;
+            }
+            for (int i = 0; i < maxCount; i++)
+            {
+                if (i < temp2.Count)
+                {
+                    zippedList.Add(temp2[i]);
+                }
+                if (i < temp1.Count)
+                {
+                    zippedList.Add(temp1[i]);
+                }
+            }
+            return zippedList;
+        }
+
+
+            public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < count; i++)
             {

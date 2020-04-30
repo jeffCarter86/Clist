@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace CustomList
 {
     class Program
-    {
+    {   /// <summary>
+    // DO NOT DELETE BELOW CODE IT IS DEMONSTARTING SORTING WITH INTEGERS AND STRINGS USING IComparer!!!!
+    /// </summary>
         // Main Method 
         public static void Main()
         {
@@ -95,6 +97,8 @@ namespace CustomList
                 Console.WriteLine(h);
 
             }
+
+            ///Below here is where you can play DO NOT delete above code !!!!
 
         }
     }
