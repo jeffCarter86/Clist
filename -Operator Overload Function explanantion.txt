@@ -1,0 +1,80 @@
+ -Operator Overload Function
+
+Gives an added function to the operator of “-“. You will also be able to subtract one instance of a ListB<T>  from another instance of a ListB<T>. 
+
+
+C#
+public static ListB<T> operator -(ListB<T> l1, ListB<T> l2)
+        {
+            //takes the first list and creates a copy
+            ListB<T> newList = new ListB<T>();
+            for (int i = 0; i < l1.Count; i++)
+            {
+                newList.Add(l1[i]);
+            }
+
+            //searches the comparing list for duplicate objects and removes them from the copied list
+            for (int i = 0; i < newList.Count; i++)
+            {
+                for (int j = 0; j < l2.Count; j++)
+                {
+                    if (newList[i].Equals(l2[j]))
+                    {
+                        newList.Remove(l2[j]);
+
+                    }
+                }
+            }
+            //returns the copied list with subtracted objects
+            return newList;
+        }
+
+Parameters
+L1  T , L2  T
+The parameters are the two lists that are needed to compare.
+L1 is the ListB<t> you want to subtract the objects from. L2 is the ListB<T> you want to look through to see if it entails any values that are in L1.
+
+
+Returns
+ListB<T>
+Returns a list with the subtracted objects. 
+
+
+Example
+Here is an example of using the overload operator “–“ and subtracting one instance of a  list containing integers from another instance of a list containing integers.
+C#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Example
+{
+    class Program
+    {
+            ListB<int> listB = new ListB<int>();
+            ListB<int> listA = new ListB<int>();
+            ListB<int> combinedList = new ListB<int>();
+
+            
+            listB.Add(1);
+            listB.Add(2);
+            listB.Add(3);
+            listA.Add(1);
+            listA.Add(4);
+            listA.Add(5);
+            listA.Add(6);
+            listA.Add(7);
+		 //listB now contains { 1, 2, 3}
+		 //listA now contains { 1, 4, 5, 6, 7}
+
+            combinedList = listB - listA; //here is where the overload of operator “-“ happens
+// it will now remove objects from listB that are       also found in listA (in this case it is 1)
+//the combinedList now will contain {2, 3}
+	
+	     Console.WriteLine($”{combinedList}”);
+        }
+}
+
+            //the ouput will read “23”
