@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomList;
 using System.Collections;
+using Microsoft.Office.Interop.Excel;
 
 namespace CustomListTesting
 {
@@ -671,6 +672,7 @@ namespace CustomListTesting
         }
 
         [TestMethod]
+
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void Indexer_CheckForExceptionCode()
         {
@@ -690,12 +692,44 @@ namespace CustomListTesting
             //assert
 
         }
+        //below extra credit work in progress
+        //[TestMethod]
+
+       // public void Sorting_CheckofStrList()
+       
+        
+        {
+          //  ListB<string> list2 = new ListB<string>();
+            //ListB<IComparer> ggg = new ListB<IComparer>();
+            //string expected = "ABCDEFGH";
+            //string actual;
+
+            
+
+                // list elements 
+            //list2.Add("A");
+              //  list2.Add("I");
+                //list2.Add("G");
+         //       list2.Add("B");
+         //       list2.Add("E");
+         //       list2.Add("H");
+           //     list2.Add("F");
+          //      list2.Add("C");
+           //     list2.Add("J");
+            //    list2.Add("D");
+
+        //    actual = ggg.Sort.(list2);
+
+        //    Assert.AreEqual(expected, actual);
+
+  
 
 
 
 
-    }
-}
+    } }
+
+
 
 
 

@@ -42,6 +42,11 @@ namespace CustomList
             }
         }
 
+        public object Sort { get; set; }
+
+        private ListB<int> items;
+
+
         private T[] listArray;
         public T this[int number]
         {
@@ -276,7 +281,7 @@ namespace CustomList
         }
 
 
-            public IEnumerator GetEnumerator()
+        public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < count; i++)
             {
@@ -310,5 +315,24 @@ namespace CustomList
             return x.CompareTo(y);
 
         }
+
+        public void SortInt()
+        {
+            for (var i = 0; i < count; i++)
+            {
+                for (var j = 0; j < count - 1; j++)
+                {
+                    if (j > j + 1)
+                    {
+                        var tmp = j;
+                        j = j + 1;
+                        tmp = j + 1;
+                    }
+                }
+            }
+        }
+
+
+
     }
 }

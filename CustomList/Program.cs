@@ -55,7 +55,7 @@ namespace CustomList
                 Console.WriteLine(g);
 
             }
-
+            { }
             List<string> list2 = new List<string>();
 
             // list elements 
